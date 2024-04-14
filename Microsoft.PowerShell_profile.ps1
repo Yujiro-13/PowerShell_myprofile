@@ -16,6 +16,8 @@ oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/paradox.omp.json" | Invoke-
 Import-module posh-git
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
+Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
 # Be aware that if you are missing these lines from your profile, tab completion
